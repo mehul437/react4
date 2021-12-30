@@ -74,7 +74,7 @@ export default function Studata (props) {
        <div className='main2'>
            <form>
          
-             <p className='frow'>
+             <div className='frow'>
 
                     <span className='first'> <TextField
 
@@ -95,9 +95,9 @@ export default function Studata (props) {
                         value={status.age}
                        onChange={change}
                     /></span>
-                </p>
+                </div>
 
-                <p className='frow'>
+                <div className='frow'>
                     <span className='third'> <TextField
 
                         name="course"
@@ -117,7 +117,7 @@ export default function Studata (props) {
                         value={status.batch}
                        onChange={change}
                     /></span>
-                </p>
+                </div>
                 
 {/*             
          
