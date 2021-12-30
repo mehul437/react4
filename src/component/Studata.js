@@ -1,4 +1,4 @@
-import React, { useState  } from 'react'
+import React, { useState , useRef } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { useContext } from 'react/cjs/react.development'
 import { useParams } from 'react-router-dom'
@@ -13,9 +13,9 @@ export default function Studata (props) {
         course: "",
         batch:""
     })
-    const[show,setshow]=useState(props.data)
+    const[show]=useState(props.data)
 
-
+    const temp=useRef()
     const navigate=useNavigate()
     const[students,setstudents]=useContext(StudentContext)
     const fid = useParams();
@@ -47,17 +47,18 @@ export default function Studata (props) {
         navigate("/student")
     }
 
-
+    temp.current=funset
     useEffect(() => {
-        if(show){
-            funset()
-        }
-    },
-        [])
+        
+            temp.current()
+        
+    }, []);
 
     function funset() {
-        const newelement = students.find((el) => el.id === fid.fid);
-        setstatus(newelement);
+      if(show){
+          const newelement = students.find((el) => el.id === fid.fid);
+          setstatus(newelement);
+      }
     }
 
 
@@ -118,24 +119,7 @@ export default function Studata (props) {
                        onChange={change}
                     /></span>
                 </div>
-                
-{/*             
-         
-                <label name="name" >Name :</label><br />
-                <input type="text" name="name" value={status.name} onChange={change} />
-                <br /><br />
-                <label name="age" >Age :</label><br />
-                <input type="number" name="age" value={status.age} onChange={change} />
-
-                <br /><br />
-                <label name="course" >Course :</label><br />
-                <input type="text" name="course" value={status.course} onChange={change} />
-
-                <br /><br />
-                <label name="batch" >Batch :</label><br />
-                <input type="text" name="batch" value={status.batch} onChange={change} />
-
-                <br /><br /> */}
+  
                 {butto}
 
 
