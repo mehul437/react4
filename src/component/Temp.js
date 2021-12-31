@@ -1,5 +1,7 @@
 import { useContext } from 'react'
 import { Link } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom';
+
 import Table from '@mui/material/Table';
 import TableBody from '@mui/material/TableBody';
 import TableCell from '@mui/material/TableCell';
@@ -11,9 +13,13 @@ import { StudentContext } from './StudenContext'
 
 export default function Temp() {
     const [students] = useContext(StudentContext)
+    const nav=useNavigate();
+    const caller=()=>{
+        nav("/student-dec");
+    }
     return (
     <div>
-            <p><span>Student data</span><Link to="/student-dec"> <button className='add'>add student</button></Link></p>
+            <p><span>Student data</span> <button className='add' onClick={caller}>add student</button></p>
         <TableContainer component={Paper}>
             <Table>
                 <TableHead>

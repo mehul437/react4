@@ -65,6 +65,7 @@ p{
   border:1px black solid;
   background-color: rgb(169, 123, 212);
   margin-left: 50%;
+  cursor: pointer;
 }
 span{
   font-size: x-large;
@@ -97,6 +98,7 @@ li{
   padding-right: 25px;
   margin-left: 40%;
   margin-top: 4%;
+  cursor: pointer;
 }
 .frow{
   
